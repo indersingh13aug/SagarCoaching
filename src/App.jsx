@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Layout Components
+import Login from './pages/Login'; 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -14,6 +15,10 @@ import Contact from './pages/Contact';
 import Batches from './pages/Batches';
 import Offers from './pages/Offers';
 import Admin from './pages/Admin';
+import AddCourse from './admin/AddCourse';
+import AddBatch from './admin/AddBatch';
+import AddOffer from './admin/AddOffer';
+import AddTeacher from './admin/AddTeacher';
 
 const App = () => {
   return (
@@ -31,6 +36,11 @@ const App = () => {
             <Route path="/batches" element={<Batches />} />
             <Route path="/offers" element={<Offers />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/admin/add-course" element={<AddCourse />} />
+            <Route path="/admin/add-batch" element={<AddBatch />} />
+            <Route path="/admin/add-offer" element={<AddOffer />} />
+            <Route path="/admin/add-teacher" element={<AddTeacher />} />
+            <Route path="/login" element={<Login />} /> {/* ✅ Add this line */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

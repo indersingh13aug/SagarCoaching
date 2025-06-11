@@ -18,12 +18,16 @@ const AddCourse = () => {
     formState: { errors }
   } = useForm();
 
-  const selectedModes = watch("mode", []);
+  // Safe mode selection (ensures it's always an array)
+  const selectedModesRaw = watch("mode", []);
+  const selectedModes = Array.isArray(selectedModesRaw)
+    ? selectedModesRaw
+    : selectedModesRaw ? [selectedModesRaw] : [];
 
   const onSubmit = async (data) => {
     const formatted = {
       title: data.title,
-      mode: data.mode,
+      mode: selectedModes,
       fee: {
         online: data.onlineFee ? Number(data.onlineFee) : null,
         offline: data.offlineFee ? Number(data.offlineFee) : null,
@@ -33,11 +37,11 @@ const AddCourse = () => {
 
     try {
       await axios.post('/api/courses', formatted);
-      toast.success("Course added successfully!");
+      toast.success("✅ Course added successfully!");
       reset();
     } catch (err) {
       console.error(err);
-      toast.error("Failed to add course.");
+      toast.error("❌ Failed to add course.");
     }
   };
 
@@ -66,10 +70,9 @@ const AddCourse = () => {
             <label><input type="checkbox" value="Online" {...register("mode")} /> Online</label>
             <label><input type="checkbox" value="Offline" {...register("mode")} /> Offline</label>
           </div>
-          {errors.mode && <p className="text-red-600 text-sm">{errors.mode.message}</p>}
         </div>
 
-        {/* Fees */}
+        {/* Online Fee */}
         {selectedModes.includes("Online") && (
           <div>
             <label className="block font-medium mb-1">Online Fee (₹)</label>
@@ -82,6 +85,7 @@ const AddCourse = () => {
           </div>
         )}
 
+        {/* Offline Fee */}
         {selectedModes.includes("Offline") && (
           <div>
             <label className="block font-medium mb-1">Offline Fee (₹)</label>

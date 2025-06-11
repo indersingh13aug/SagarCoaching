@@ -1,19 +1,24 @@
-// Save auth token to localStorage
 export const setAuthToken = (token) => {
   localStorage.setItem('authToken', token);
 };
 
-// Get auth token from localStorage
 export const getAuthToken = () => {
   return localStorage.getItem('authToken');
 };
 
-// Remove auth token from localStorage
-export const removeAuthToken = () => {
-  localStorage.removeItem('authToken');
+export const setUserRole = (role) => {
+  localStorage.setItem('userRole', role);
 };
 
-// Check if user is logged in
+export const getUserRole = () => {
+  return localStorage.getItem('userRole');
+};
+
+export const removeAuthToken = () => {
+  localStorage.removeItem('authToken');
+  localStorage.removeItem('userRole');
+};
+
 export const isLoggedIn = () => {
   return !!getAuthToken();
 };
