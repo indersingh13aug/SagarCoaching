@@ -9,7 +9,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Send data to backend or API
     alert('Message submitted! Thank you.');
     setFormData({ name: '', email: '', message: '' });
   };
@@ -18,7 +17,7 @@ const Contact = () => {
     <div className="max-w-6xl mx-auto px-4 py-10">
       <h1 className="text-3xl font-bold text-indigo-700 mb-6">Contact Us</h1>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 gap-8 mb-10">
         {/* Contact Info */}
         <div>
           <h2 className="text-xl font-semibold text-indigo-600 mb-2">Bright Future Institute</h2>
@@ -73,6 +72,20 @@ const Contact = () => {
             Send Message
           </button>
         </form>
+      </div>
+
+      {/* Embedded Google Map */}
+      <div className="w-full h-72 md:h-96 rounded overflow-hidden shadow-lg">
+        <iframe
+          title="Bright Future Institute Location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14274.659378792184!2d81.8003825!3d26.1558291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399a054dbe1fbb17%3A0x53563d0c98f72515!2sAmethi%2C%20Uttar%20Pradesh%20227501!5e0!3m2!1sen!2sin!4v1718126612345!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="border-0"
+        ></iframe>
       </div>
     </div>
   );
