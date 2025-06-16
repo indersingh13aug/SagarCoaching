@@ -40,7 +40,7 @@ const Navbar = () => {
           <Link to="/courses" className="hover:text-blue-600">Courses</Link>
           
           <Link to="/batches" className="hover:text-blue-600">Batches</Link>
-          <Link to="/offers" className="hover:text-blue-600">Offers</Link>
+          {/* <Link to="/offers" className="hover:text-blue-600">Offers</Link> */}
           <Link to="/contact" className="hover:text-blue-600">Contact</Link>
           <Link to="/about" className="hover:text-blue-600">About</Link>
 

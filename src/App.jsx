@@ -13,7 +13,7 @@ import Courses from './pages/Courses';
 import Registration from './pages/Registration';
 import Contact from './pages/Contact';
 import Batches from './pages/Batches';
-import Offers from './pages/Offers';
+// import Offers from './pages/Offers';
 import Admin from './pages/Admin';
 import AddCourse from './admin/AddCourse';
 import AddBatch from './admin/AddBatch';
@@ -34,7 +34,7 @@ const App = () => {
             <Route path="/register" element={<Registration />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/batches" element={<Batches />} />
-            <Route path="/offers" element={<Offers />} />
+            {/* <Route path="/offers" element={<Offers />} /> */}
             <Route path="/admin" element={<Admin />} />
             <Route path="/admin/add-course" element={<AddCourse />} />
             <Route path="/admin/add-batch" element={<AddBatch />} />
