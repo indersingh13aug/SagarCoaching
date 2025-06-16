@@ -1,7 +1,7 @@
 const courses = [
   {
     id: 1,
-    name: "NEET Preparation",
+    name: "NEET",
     description:
       "Comprehensive NEET preparation with Biology, Physics & Chemistry. Includes doubt sessions, mock tests, and full syllabus coverage.",
     feesOnline: 22000,
@@ -10,7 +10,7 @@ const courses = [
   },
   {
     id: 2,
-    name: "IIT JEE Preparation",
+    name: "JEE",
     description:
       "JEE Main + Advanced preparation with expert faculty in Mathematics, Physics & Chemistry. Includes test series and mentorship.",
     feesOnline: 25000,
@@ -19,7 +19,7 @@ const courses = [
   },
   {
     id: 3,
-    name: "UPSC Preparation",
+    name: "UPSC",
     description:
       "Complete General Studies, CSAT, and Current Affairs coverage. Expert faculty for History, Geography, Polity, Economy, and more.",
     feesOnline: 40000,

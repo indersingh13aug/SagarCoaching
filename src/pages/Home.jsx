@@ -26,28 +26,28 @@ const Home = () => {
         <h2 className="text-3xl font-bold text-center text-indigo-700 mb-10">Our Top Programs</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {/* NEET */}
-          <div className="bg-white border shadow p-6 rounded-lg text-center">
-            <h3 className="text-xl font-semibold text-indigo-600 mb-2">NEET Preparation</h3>
-            <p className="text-gray-700">
-              Comprehensive coaching in Physics, Chemistry & Biology with expert faculty and doubt-solving support.
-            </p>
-          </div>
+    <Link to="/batches" className="block bg-white border shadow p-6 rounded-lg text-center hover:shadow-lg transition">
+      <h3 className="text-xl font-semibold text-indigo-600 mb-2">NEET Preparation</h3>
+      <p className="text-gray-700">
+        Comprehensive coaching in Physics, Chemistry & Biology with expert faculty and doubt-solving support.
+      </p>
+    </Link>
 
-          {/* JEE */}
-          <div className="bg-white border shadow p-6 rounded-lg text-center">
-            <h3 className="text-xl font-semibold text-indigo-600 mb-2">IIT JEE Preparation</h3>
-            <p className="text-gray-700">
-              Structured learning for JEE Main & Advanced with focus on concept clarity and practice tests.
-            </p>
-          </div>
+    {/* JEE */}
+    <Link to="/batches" className="block bg-white border shadow p-6 rounded-lg text-center hover:shadow-lg transition">
+      <h3 className="text-xl font-semibold text-indigo-600 mb-2">IIT JEE Preparation</h3>
+      <p className="text-gray-700">
+        Structured learning for JEE Main & Advanced with focus on concept clarity and practice tests.
+      </p>
+    </Link>
 
-          {/* UPSC */}
-          <div className="bg-white border shadow p-6 rounded-lg text-center">
-            <h3 className="text-xl font-semibold text-indigo-600 mb-2">UPSC Preparation</h3>
-            <p className="text-gray-700">
-              Guided preparation for Prelims, Mains & Interview with top faculty for GS, CSAT & Optional subjects.
-            </p>
-          </div>
+    {/* UPSC */}
+    <Link to="/batches" className="block bg-white border shadow p-6 rounded-lg text-center hover:shadow-lg transition">
+      <h3 className="text-xl font-semibold text-indigo-600 mb-2">UPSC Preparation</h3>
+      <p className="text-gray-700">
+        Guided preparation for Prelims, Mains & Interview with top faculty for GS, CSAT & Optional subjects.
+      </p>
+    </Link>
         </div>
       </div>
 

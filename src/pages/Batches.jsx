@@ -1,9 +1,17 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import batches from '../data/batches';
 
 const Batches = () => {
+  const location = useLocation();
   const navigate = useNavigate();
+
+  const queryParams = new URLSearchParams(location.search);
+  const selectedCourse = queryParams.get('course');
+
+  const filteredBatches = selectedCourse
+    ? batches.filter(batch => batch.course.toLowerCase() === selectedCourse.toLowerCase())
+    : batches;
 
   const handleRegister = (batch) => {
     const query = new URLSearchParams({
@@ -17,13 +25,30 @@ const Batches = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-indigo-700 mb-6">Upcoming Batches</h1>
+      <h1 className="text-3xl font-bold text-indigo-700 mb-4">
+        {selectedCourse ? `${selectedCourse} Batches` : 'Upcoming Batches'}
+      </h1>
 
-      {batches.length === 0 ? (
-        <p className="text-gray-600">No batches available at the moment.</p>
+      {/* Show All Batches Button */}
+      {selectedCourse && (
+        <div className="mb-6">
+          <button
+            onClick={() => navigate('/batches')}
+            className="bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm px-4 py-2 rounded"
+          >
+            Show All Batches
+          </button>
+        </div>
+      )}
+
+      {/* If No Batches Found */}
+      {filteredBatches.length === 0 ? (
+        <p className="text-gray-600">
+          No batches found for <strong>{selectedCourse}</strong>.
+        </p>
       ) : (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {batches.map((batch) => (
+          {filteredBatches.map((batch) => (
             <div
               key={batch.id}
               className="border border-indigo-200 rounded-lg shadow p-6 bg-white flex flex-col justify-between"
