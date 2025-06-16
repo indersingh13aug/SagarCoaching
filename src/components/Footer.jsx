@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -17,10 +18,10 @@ const Footer = () => {
         {/* Navigation Links */}
         <div className="flex flex-col gap-1">
           <h3 className="font-semibold mb-1">Quick Links</h3>
-          <a href="/" className="text-gray-400 hover:text-white">Home</a>
-          <a href="/courses" className="text-gray-400 hover:text-white">Courses</a>
-          <a href="/about" className="text-gray-400 hover:text-white">About</a>
-          <a href="/contact" className="text-gray-400 hover:text-white">Contact</a>
+          <Link to="/" className="text-gray-400 hover:text-white">Home</Link>
+          <Link to="/courses" className="text-gray-400 hover:text-white">Courses</Link>
+          <Link to="/about" className="text-gray-400 hover:text-white">About</Link>
+          <Link to="/contact" className="text-gray-400 hover:text-white">Contact</Link>
         </div>
 
         {/* Contact + Social */}
