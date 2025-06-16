@@ -1,7 +1,7 @@
 const offers = [
   {
     id: 1,
-    title: "Early Bird Discount – NEET",
+    title: "Early Bird Discount NEET",
     description: "Enroll before June 20 and get ₹3,000 off on NEET Offline course fees.",
     validTill: "2025-06-20",
     course: "NEET"
