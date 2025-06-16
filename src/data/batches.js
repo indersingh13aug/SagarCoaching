@@ -12,7 +12,7 @@ const batches = [
     id: 2,
     course: "JEE",
     batchName: "JEE Advanced Target 2026",
-    description: "Evening batch focused on JEE Advanced. Includes daily DPPs and doubt sessions.",
+    description: "Evening batch focused on JEE Advanced. Includes daily DPPs and doubt sessions.  Timings: 8 AM - 12 PM.",
     startDate: "15-07-2025",
     mode:"Online"
   },
@@ -28,7 +28,7 @@ const batches = [
     id: 4,
     course: "UPSC",
     batchName: "UPSC GS Mains Booster",
-    description: "Special batch for mains answer writing practice. Includes mentorship and model answers.",
+    description: "Special batch for mains answer writing practice. Includes mentorship and model answers.  Timings: 8 AM - 12 PM.",
     startDate: "25-07-2025",
     mode:"Online"
   }

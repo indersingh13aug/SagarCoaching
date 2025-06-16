@@ -1,7 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import batches from '../data/batches';
 
 const Batches = () => {
+  const navigate = useNavigate();
+
+  const handleRegister = (batch) => {
+    const query = new URLSearchParams({
+      course: batch.course,
+      mode: batch.mode,
+      description: batch.description,
+      startDate: batch.startDate,
+    }).toString();
+    navigate(`/register?${query}`);
+  };
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
       <h1 className="text-3xl font-bold text-indigo-700 mb-6">Upcoming Batches</h1>
@@ -13,12 +26,21 @@ const Batches = () => {
           {batches.map((batch) => (
             <div
               key={batch.id}
-              className="border border-indigo-200 rounded-lg shadow p-6 bg-white"
+              className="border border-indigo-200 rounded-lg shadow p-6 bg-white flex flex-col justify-between"
             >
-              <h2 className="text-xl font-semibold text-indigo-600 mb-2">{batch.course}</h2>
-              <p className="text-gray-700">Start Date: <strong>{batch.startDate}</strong></p>
-              <p className="text-gray-700">Mode: <strong>{batch.mode}</strong></p>
-              <p className="text-gray-600 mt-2 text-sm">Batch ID: {batch.id}</p>
+              <div>
+                <h2 className="text-xl font-semibold text-indigo-600 mb-2">{batch.course}</h2>
+                <p className="text-gray-700 mb-1"><strong>Description:</strong> {batch.description}</p>
+                <p className="text-gray-700 mb-1">Start Date: <strong>{batch.startDate}</strong></p>
+                <p className="text-gray-700 mb-2">Mode: <strong>{batch.mode}</strong></p>
+                <p className="text-gray-500 text-sm">Batch ID: {batch.id}</p>
+              </div>
+              <button
+                onClick={() => handleRegister(batch)}
+                className="mt-4 bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700"
+              >
+                Register
+              </button>
             </div>
           ))}
         </div>

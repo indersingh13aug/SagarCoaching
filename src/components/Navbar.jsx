@@ -38,7 +38,7 @@ const Navbar = () => {
         <div className="hidden sm:flex gap-6 items-center text-gray-700 font-medium text-[16px]">
           <Link to="/" className="hover:text-blue-600">Home</Link>
           <Link to="/courses" className="hover:text-blue-600">Courses</Link>
-          <Link to="/register" className="hover:text-blue-600">Register</Link>
+          
           <Link to="/batches" className="hover:text-blue-600">Batches</Link>
           <Link to="/offers" className="hover:text-blue-600">Offers</Link>
           <Link to="/contact" className="hover:text-blue-600">Contact</Link>
@@ -67,7 +67,7 @@ const Navbar = () => {
         <div className="sm:hidden flex flex-col items-start px-6 pb-4 gap-3 text-gray-700 font-medium text-[16px]">
           <Link to="/" onClick={toggleMenu}>Home</Link>
           <Link to="/courses" onClick={toggleMenu}>Courses</Link>
-          <Link to="/register" onClick={toggleMenu}>Register</Link>
+          
           <Link to="/batches" onClick={toggleMenu}>Batches</Link>
           <Link to="/offers" onClick={toggleMenu}>Offers</Link>
           <Link to="/contact" onClick={toggleMenu}>Contact</Link>
