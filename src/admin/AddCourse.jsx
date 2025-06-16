@@ -281,8 +281,18 @@ const AddCourse = () => {
   };
 
   useEffect(() => {
+    const fetchCourses = async () => {
+      const snapshot = await getDocs(collection(db, 'courses'));
+      const data = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setCourses(data);
+    };
+
     fetchCourses();
-  }, []);
+  }, []); // ✅ No warning now
+
 
   const selectedModesRaw = watch("mode", []);
   const selectedModes = Array.isArray(selectedModesRaw)
