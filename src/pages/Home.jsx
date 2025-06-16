@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="bg-indigo-600 text-white py-20 px-4 text-center">
+      <div className="bg-indigo-600 text-white py-10 px-4 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to Bright Future Institute</h1>
         <p className="text-lg md:text-xl mb-6">
           Empowering students for success in NEET, IIT JEE, and UPSC exams
