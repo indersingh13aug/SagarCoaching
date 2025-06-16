@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login'; 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
+import FloatingButtons from './components/FloatingButtons';
 // Pages
 import Home from './pages/Home';
 import About from './pages/About';
@@ -44,6 +44,8 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
+         {/* ✅ Floating WhatsApp & Call buttons */}
+        <FloatingButtons />
 
         <Footer />
       </div>
