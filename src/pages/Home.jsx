@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import EnquiryModal from './EnquiryModal';
 
 const Home = () => {
+  const [showEnquiry, setShowEnquiry] = useState(false);
+
   return (
-    <div>
+    <div className="relative">
       {/* Hero Section */}
       <div className="bg-indigo-600 text-white py-10 px-4 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to Bright Future Institute</h1>
@@ -59,6 +62,17 @@ const Home = () => {
           Check Upcoming Batches
         </Link>
       </div>
+
+      {/* Vertical Enquire Now Button */}
+<button
+  onClick={() => setShowEnquiry(true)}
+  className="fixed top-1/2 left-4 font-bold text-indigo-700 transform -translate-y-1/2 -rotate-90 origin-left bg-yellow-400 text-black px-3 h-12 rounded-r shadow-lg z-50 flex items-center justify-center"
+>
+  Enquire Now
+</button>
+
+      {/* Modal */}
+      <EnquiryModal isOpen={showEnquiry} onClose={() => setShowEnquiry(false)} />
     </div>
   );
 };
