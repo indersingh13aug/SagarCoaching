@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { FiMessageCircle } from 'react-icons/fi';
 
-const Chatbot = () => {
+const Chatbot = ({ site = "coaching" }) => {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([
     { from: 'bot', text: 'Hello! How can I assist you today?' },
@@ -21,7 +21,11 @@ const Chatbot = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/chat', { message: input });
+      const res = await axios.post('https://chatbot-cq5d.onrender.com/chat', {
+        site,
+        message: input
+      });
+
       const botReply = { from: 'bot', text: res.data.reply };
       setMessages(prev => [...prev, botReply]);
     } catch (err) {
@@ -140,11 +144,14 @@ const Chatbot = () => {
             boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
             cursor: 'pointer',
             transition: 'transform 0.3s ease-in-out',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
           }}
           onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.1)'}
-          onMouseLeave={e => e.currentTarget.style.transform = 'scale(.75)'}
+          onMouseLeave={e => e.currentTarget.style.transform = 'scale(1.0)'}
         >
-           <FiMessageCircle size={32} color="#fff" style={{ transition: 'transform 0.3s ease-in-out', marginLeft : '15px' }} />
+          <FiMessageCircle size={32} color="#fff" />
         </button>
       )}
     </div>

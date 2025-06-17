@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     removeAuthToken();
-    navigate('/login');
+    navigate('/');
   };
 
   const toggleMenu = () => {
