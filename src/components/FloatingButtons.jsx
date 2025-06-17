@@ -3,10 +3,10 @@ import { FaWhatsapp, FaPhone } from 'react-icons/fa';
 
 const FloatingButtons = () => {
   return (
-    <div className="fixed right-4 bottom-24 flex flex-col gap-4 z-50">
+    <div className="fixed left-4 bottom-24 flex flex-col gap-4 z-50">
 
       {/* WhatsApp */}
-      <div className="group flex items-center justify-end relative">
+      <div className="group flex items-center justify-start relative">
         <a
           href="https://wa.me/919452777207"
           target="_blank"

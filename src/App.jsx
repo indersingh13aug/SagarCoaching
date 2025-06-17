@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FloatingButtons from './components/FloatingButtons';
+import Chatbot from './components/Chatbot';
 // Pages
 import Home from './pages/Home';
 import About from './pages/About';
@@ -46,7 +47,7 @@ const App = () => {
         </main>
          {/* ✅ Floating WhatsApp & Call buttons */}
         <FloatingButtons />
-
+        <Chatbot />
         <Footer />
       </div>
     </Router>
