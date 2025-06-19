@@ -48,6 +48,16 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="text-center text-gray-500 text-sm mt-8 border-t border-gray-700 pt-4">
         © {new Date().getFullYear()} Bright Future Institute. All rights reserved.
+        <br />
+        Developed by{' '}
+        <a
+          href="https://webcoreai.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+          className="text-blue-400 hover:underline"
+        >
+          WebCore AI Solutions
+        </a>
       </div>
     </footer>
   );
